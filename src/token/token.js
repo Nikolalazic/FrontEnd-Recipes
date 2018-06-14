@@ -1,10 +1,11 @@
 class Token {
-	setToken(token){
+	setToken(token) {
 		this.token = token;
 	};
 
-	getToken(){
+	getToken() {
 		return this.token;
 	}
 }
+
 export default Token = new Token()

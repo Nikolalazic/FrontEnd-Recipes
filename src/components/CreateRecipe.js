@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-import Token from '../token/token'
 class CreateRecipe extends Component {
 	constructor(props) {
 		super(props);
@@ -11,6 +10,7 @@ class CreateRecipe extends Component {
 			description: ""
 		};
 	}
+
 	handleTitle = (title) => {
 		this.setState({
 			title,
@@ -30,9 +30,11 @@ class CreateRecipe extends Component {
 		event.preventDefault();
 		try {
 			const response = await axios.post('http://localhost:8080/recipes/create', this.state,
-				{headers:{
-					token: Token.getToken(),
-				}});
+				{
+					headers: {
+						token: localStorage.getItem("token")
+					}
+				});
 
 			console.log(response.data);
 		} catch (error) {
@@ -41,6 +43,7 @@ class CreateRecipe extends Component {
 
 
 	};
+
 	render() {
 		return (
 			<div>

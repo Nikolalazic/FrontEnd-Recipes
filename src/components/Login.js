@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import Token from '../token/token'
+
 class Login extends Component {
 	constructor(props) {
 		super(props);
@@ -10,6 +11,7 @@ class Login extends Component {
 			password: ""
 		};
 	}
+
 	handleNickName = (nickName) => {
 		this.setState({
 			nickName,
@@ -27,12 +29,15 @@ class Login extends Component {
 
 			console.log(response.data);
 			Token.setToken(response.data.id);
+
+			localStorage.setItem("token", Token.getToken() );
 		} catch (error) {
 			console.log(error);
 		}
 
 
 	};
+
 	render() {
 		return (
 			<div>

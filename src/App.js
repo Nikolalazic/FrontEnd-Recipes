@@ -5,6 +5,8 @@ import Navigation from './components/Navigation';
 import Register from './components/Register';
 import Login from './components/Login';
 import CreateRecipe from './components/CreateRecipe';
+import myRecipes from './components/myRecipes';
+import allRecipes from './components/allRecipes';
 
 class App extends Component {
   render() {
@@ -16,6 +18,8 @@ class App extends Component {
 				    <Route path="/" component={Register} exact />
 				    <Route path="/login" component={Login} />
 				    <Route path="/create-recipe" component={CreateRecipe} />
+				    <Route path="/my-recipes" component={myRecipes} />
+				    <Route path="/all-recipes" component={allRecipes} />
 			    </Switch>
 		    </div>
 	    </BrowserRouter>
