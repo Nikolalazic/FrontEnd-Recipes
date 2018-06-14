@@ -13,7 +13,6 @@ class myRecipes extends Component {
 		const res = await axios.get('http://localhost:8080/recipes/my-recipes', {headers: {token: localStorage.getItem("token")}});
 
 		const myRecipes = res.data;
-		console.log(myRecipes);
 		this.setState({myRecipes})
 	}
 

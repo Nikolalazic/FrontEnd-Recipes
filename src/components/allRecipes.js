@@ -13,7 +13,6 @@ class allRecipes extends Component {
 		const res = await axios.get('http://localhost:8080/recipes/all-recipes');
 
 		const myRecipes = res.data;
-		console.log(myRecipes);
 		this.setState({myRecipes})
 	}
 
